@@ -22,8 +22,8 @@ public class Solicitud {
     private String resumen;
 
     @ManyToOne
-    @Column(name = "id_empleado")
-    private int idEmpleado;
+    @JoinColumn (name = "id_empleado")
+    private Empleado empleado;
 
     public Solicitud() {
     }
@@ -67,12 +67,12 @@ public class Solicitud {
         this.resumen = resumen;
     }
 
-    public int getIdEmpleado() {
-        return idEmpleado;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setIdEmpleado(int idEmpleado) {
-        this.idEmpleado = idEmpleado;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
     @Override
@@ -82,7 +82,7 @@ public class Solicitud {
                 ", codigo='" + codigo + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", resumen='" + resumen + '\'' +
-                ", idEmpleado=" + idEmpleado +
+                ", empleado=" + empleado +
                 '}';
     }
 }
